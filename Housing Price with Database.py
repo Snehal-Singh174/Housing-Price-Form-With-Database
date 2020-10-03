@@ -6,13 +6,13 @@ root.title("Codewarriors")
 root.iconbitmap("C:/Users/Snehal/Pictures/icon1.jpg")
 
 
-conn=sqlite3.connect("dhp.db")
+conn=sqlite3.connect("dhp.db")#setup connection with database
 print("Database created successfully")
 
 c=conn.cursor()
 
 c=c.execute("""CREATE TABLE Housing_Price(Email_Address text,Your_Name text,In_which_locality_do_you_live text,Type_of_house text,Distance_from_Nearest_Hospital text,Number_of_Rooms text,Distance_from_Nearest_School text,Distance_from_Nearest_Police_Station text,Distance_from_Nearest_Fire_Station text,Availability_of_Transport_in_your_area text,Current_Price_of_the_House text);""")
-print("Table created successfully")
+print("Table created successfully")# Running Create query for table creation in database
 
 
 def Submit():
@@ -30,7 +30,7 @@ def Submit():
     a10=r5.get()
     a11=r7.get()
     c.execute("INSERT INTO Housing_Price(Email_Address,Your_Name,In_which_locality_do_you_live,Type_of_house,Distance_from_Nearest_Hospital,Number_of_Rooms,Distance_from_Nearest_School,Distance_from_Nearest_Police_Station,Distance_from_Nearest_Fire_Station,Availability_of_Transport_in_your_area,Current_Price_of_the_House) VALUES(?,?,?,?,?,?,?,?,?,?,?)",(a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11))
-    print(e1.get(),e2.get(),clicked2.get(),r6.get(),r1.get(),r.get(),r2.get(),r3.get(),r4.get(),r5.get(),r7.get())
+    print(e1.get(),e2.get(),clicked2.get(),r6.get(),r1.get(),r.get(),r2.get(),r3.get(),r4.get(),r5.get(),r7.get()) #inserting values into the table
 
     print("Data Inserted successfully")
     e1.delete(0,END)
